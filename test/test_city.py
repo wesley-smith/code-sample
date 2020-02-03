@@ -1,3 +1,4 @@
+from random import randrange
 from unittest import TestCase
 
 from city import City
@@ -15,3 +16,11 @@ class CityTest(TestCase):
         self.assertEqual(city.population, population)
         self.assertEqual(city.demand, demand)
         self.assertEqual(city.plants, plants)
+
+    def test_available_capacity(self):
+        plant_count = 5
+        plant_capacities = [randrange(10_000, 1_000_000) for _ in range(plant_count)]
+        total_capacity = sum(plant_capacities)
+        plants = [PowerPlant(capacity, "fossil") for capacity in plant_capacities]
+        city = City("Bar City", 1, 1, plants)
+        self.assertEqual(city.available_capacity, total_capacity)

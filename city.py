@@ -11,3 +11,7 @@ class City:
         self.population = population
         self.demand = demand
         self.plants = plants
+
+    @property
+    def available_capacity(self):
+        return sum(plant.capacity for plant in self.plants)

@@ -2,7 +2,7 @@
   {
     "name": "King's Landing",
     "population": 500000,
-    "peak_demand": 10000,
+    "demand": 10000,
     "power_plants":
             [
               {
