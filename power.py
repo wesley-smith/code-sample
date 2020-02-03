@@ -14,11 +14,21 @@ class PowerCategories(Enum):
 
 
 class PowerPlant:
-    def __init__(self, capacity: int, category: str):
+    """
+    A parent class for power plants of various generation types.
+    """
+
+    def __init__(self, category: str):
+        """
+        :param category: must match a major power category (case-insensitive)
+        """
         sanitized_category = category.upper()
         if not PowerCategories.__members__.__contains__(sanitized_category):
             raise ValueError(
                 f'Expected "{category}" to be one of {", ".join(item[0] for item in PowerCategories.__members__.items())}'
             )
-        self.capacity = capacity
         self.category = sanitized_category
+
+    @property
+    def capacity(self):
+        raise NotImplementedError("Subclasses must implement this property")

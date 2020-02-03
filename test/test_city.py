@@ -10,7 +10,7 @@ class CityTest(TestCase):
         name = "Fooville"
         population = 10_000
         demand = 100_000_000
-        plants = (PowerPlant(10_000, "fossil"),)
+        plants = (PowerPlant("fossil"),)
         city = City(name, population, demand, plants)
         self.assertEqual(city.name, name)
         self.assertEqual(city.population, population)
@@ -21,6 +21,6 @@ class CityTest(TestCase):
         plant_count = 5
         plant_capacities = [randrange(10_000, 1_000_000) for _ in range(plant_count)]
         total_capacity = sum(plant_capacities)
-        plants = [PowerPlant(capacity, "fossil") for capacity in plant_capacities]
+        plants = [PowerPlant("fossil") for capacity in plant_capacities]
         city = City("Bar City", 1, 1, plants)
         self.assertEqual(city.available_capacity, total_capacity)
