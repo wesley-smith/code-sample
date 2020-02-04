@@ -7,6 +7,14 @@ from power import NuclearPlant
 
 
 class CityTest(TestCase):
+    def test_input_validation(self):
+        self.assertRaises(
+            ValueError, City, name="foo", population=-1, demand=1, plants=[]
+        )
+        self.assertRaises(
+            ValueError, City, name="foo", population=1, demand=-1, plants=[]
+        )
+
     def test_constructor(self):
         name = "Fooville"
         population = 10_000
