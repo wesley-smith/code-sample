@@ -46,6 +46,7 @@ class CityTest(TestCase):
                 "name": city.name,
                 "population": population,
                 "demand": demand,
+                "plant_count": 0,
                 "available_capacity": 0,
             },
         )
