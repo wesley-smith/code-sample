@@ -54,7 +54,7 @@ def main(args):
     if args.markdown_format:
         print(df.to_markdown())
     else:
-        print(df)
+        print(df.to_string(index=False))
 
 
 if __name__ == "__main__":
