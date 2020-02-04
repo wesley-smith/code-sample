@@ -1,3 +1,4 @@
+import argparse
 import json
 
 import pandas as pd
@@ -11,8 +12,8 @@ from power import (
 )
 
 
-def main():
-    with open("cities.json") as f:
+def main(args):
+    with open(args.input_file) as f:
         input_cities = json.load(f)
 
     cities = []
@@ -53,4 +54,13 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "-i",
+        "--input_file",
+        type=str,
+        help="JSON file containing city data",
+        default="cities.json",
+    )
+
+    main(parser.parse_args())

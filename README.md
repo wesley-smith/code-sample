@@ -32,6 +32,8 @@ From the root project directory, run the analysis with:
 python main.py
 ```
 
+Optionally, you may pass an alternate input file name using the `-i`/`--input_file` option (run with `-h` for details).
+
 From the same directory, the tests can be run with:
 
 ```
