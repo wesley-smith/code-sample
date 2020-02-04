@@ -19,3 +19,11 @@ class City:
     @property
     def available_capacity(self) -> Real:
         return sum(plant.capacity for plant in self.plants)
+
+    def to_dict(self):
+        return {
+            "name": self.name,
+            "population": self.population,
+            "demand": self.demand,
+            "available_capacity": self.available_capacity,
+        }

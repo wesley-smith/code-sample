@@ -33,3 +33,19 @@ class CityTest(TestCase):
         mock_plants = [Mock(capacity=capacity) for capacity in plant_capacities]
         city = City(name="Bar City", population=1, demand=1, plants=mock_plants)
         self.assertEqual(city.available_capacity, total_capacity)
+
+    def test_to_dict(self):
+        name = "Fooville"
+        population = 10_000
+        demand = 100_000_000
+        plants = []
+        city = City(name, population, demand, plants)
+        self.assertEqual(
+            city.to_dict(),
+            {
+                "name": city.name,
+                "population": population,
+                "demand": demand,
+                "available_capacity": 0,
+            },
+        )

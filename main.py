@@ -1,5 +1,7 @@
 import json
 
+import pandas as pd
+
 from city import City
 from power import (
     NuclearPlant,
@@ -40,7 +42,14 @@ def main():
                 raise ValueError(f"{city['name']}: Unknown category for plant: {plant}")
         cities.append(City(city["name"], city["population"], city["demand"], plants))
 
-    print(cities)
+    # Construct a dataframe and do some analysis
+    df = pd.DataFrame(data=[city.to_dict() for city in cities])
+    df["demand_per_capita"] = df["demand"] / df["population"]
+    df["pct_demand_satisfied"] = df["available_capacity"] / df["demand"] * 100
+
+    pd.set_option("display.max_columns", 999)
+    pd.set_option("display.width", 999)
+    print(df)
 
 
 if __name__ == "__main__":
