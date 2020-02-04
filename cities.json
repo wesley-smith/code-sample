@@ -2,12 +2,12 @@
     {
         "name": "Fooville",
         "population": 500000,
-        "demand": 10000,
+        "demand": 1000000,
         "power_plants": [
             {
                 "category": "fossil",
                 "subcategory": "coal",
-                "capacity": 100000
+                "capacity": 10000
             },
             {
                 "category": "fossil",
@@ -23,7 +23,7 @@
             {
                 "category": "renewable",
                 "subcategory": "solar",
-                "area": 100000,
+                "area": 10000,
                 "efficiency": 1.5
             },
             {
