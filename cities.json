@@ -16,13 +16,13 @@
             },
             {
                 "category": "renewable",
-                "source": "wind",
+                "subcategory": "wind",
                 "turbine_rating": 1000,
                 "turbine_count": 1000
             },
             {
                 "category": "renewable",
-                "source": "solar",
+                "subcategory": "solar",
                 "area": 100000,
                 "efficiency": 1.5
             },
