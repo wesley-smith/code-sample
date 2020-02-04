@@ -32,5 +32,51 @@
                 "reactor_capacity": 1000
             }
         ]
+    },
+        {
+        "name": "Barborough",
+        "population": 1000000,
+        "demand": 1000000,
+        "power_plants": [
+            {
+                "category": "fossil",
+                "subcategory": "coal",
+                "capacity": 100000
+            },
+            {
+                "category": "fossil",
+                "subcategory": "coal",
+                "capacity": 500000
+            },
+            {
+                "category": "fossil",
+                "subcategory": "natural gas",
+                "capacity": 100000
+            },
+            {
+                "category": "renewable",
+                "subcategory": "wind",
+                "turbine_rating": 1000,
+                "turbine_count": 1000
+            },
+            {
+                "category": "renewable",
+                "subcategory": "solar",
+                "area": 100000,
+                "efficiency": 1.5
+            },
+            {
+                "category": "renewable",
+                "subcategory": "solar",
+                "area": 50000,
+                "efficiency": 1.5
+            },
+            {
+                "category": "nuclear",
+                "reactor_count": 2,
+                "reactor_capacity": 10000
+            }
+        ]
     }
+
 ]
