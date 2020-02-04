@@ -1,18 +1,31 @@
 [
-  {
-    "name": "King's Landing",
-    "population": 500000,
-    "demand": 10000,
-    "power_plants":
-            [
-              {
-                "capacity": 1000,
-                "type": "fossil"
-              },
-              {
-                "capacity": 10000,
-                "type": "wind"
-              }
-            ]
-  }
+    {
+        "name": "Fooville",
+        "population": 500000,
+        "demand": 10000,
+        "power_plants": [
+            {
+                "category": "fossil",
+                "subcategory": "coal",
+                "capacity": 100000
+            },
+            {
+                "category": "renewable",
+                "source": "wind",
+                "turbine_rating": 1000,
+                "turbine_count": 1000
+            },
+            {
+                "category": "renewable",
+                "source": "solar",
+                "area": 100000,
+                "efficiency": 1.5
+            },
+            {
+                "category": "nuclear",
+                "reactor_count": 2,
+                "reactor_capacity": 1000
+            }
+        ]
+    }
 ]
