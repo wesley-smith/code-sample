@@ -10,6 +10,11 @@
                 "capacity": 100000
             },
             {
+                "category": "fossil",
+                "subcategory": "natural gas",
+                "capacity": 50000
+            },
+            {
                 "category": "renewable",
                 "source": "wind",
                 "turbine_rating": 1000,
