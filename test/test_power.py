@@ -1,17 +1,6 @@
 from unittest import TestCase
 
-from power import PowerPlant, PowerCategories
-
-
-class PowerPlantTest(TestCase):
-    def test_constructor(self):
-        category = PowerCategories.FOSSIL.value
-
-        with self.subTest("power categories are case-insensitive"):
-            plant_1 = PowerPlant("FOSSIL")
-            plant_2 = PowerPlant("fossil")
-            self.assertEqual(plant_1.category, category)
-            self.assertEqual(plant_2.category, category)
+from power import PowerCategories, NuclearPlant
 
         with self.subTest("invalid categories produce an error"):
             with self.assertRaises(ValueError) as handler:

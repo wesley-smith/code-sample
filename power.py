@@ -1,4 +1,6 @@
+from abc import ABC, abstractmethod
 from enum import Enum
+from numbers import Real
 
 
 class PowerCategories(Enum):
@@ -13,9 +15,10 @@ class PowerCategories(Enum):
     RENEWABLE = "RENEWABLE"
 
 
-class PowerPlant:
+class PowerPlant(ABC):
     """
-    A parent class for power plants of various generation types.
+    A parent class for power plants of various generation types. Child classes must
+    implement the `capacity` property.
     """
 
     def __init__(self, category: str):
@@ -30,5 +33,6 @@ class PowerPlant:
         self.category = sanitized_category
 
     @property
-    def capacity(self):
+    @abstractmethod
+    def capacity(self) -> Real:
         raise NotImplementedError("Subclasses must implement this property")
