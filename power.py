@@ -18,21 +18,29 @@ class PowerCategories(Enum):
 class PowerPlant(ABC):
     """
     A parent class for power plants of various generation types. Child classes must
-    implement the `capacity` property.
+    implement the `category` and `capacity` properties.
     """
 
-    def __init__(self, category: str):
-        """
-        :param category: must match a major power category (case-insensitive)
-        """
-        sanitized_category = category.upper()
-        if not PowerCategories.__members__.__contains__(sanitized_category):
-            raise ValueError(
-                f'Expected "{category}" to be one of {", ".join(item[0] for item in PowerCategories.__members__.items())}'
-            )
-        self.category = sanitized_category
+    @property
+    @abstractmethod
+    def category(self) -> str:
+        pass
 
     @property
     @abstractmethod
     def capacity(self) -> Real:
-        raise NotImplementedError("Subclasses must implement this property")
+        pass
+
+
+class NuclearPlant(PowerPlant):
+    def __init__(self, reactor_count: int, reactor_capacity: Real):
+        self.reactor_count = reactor_count
+        self.reactor_capacity = reactor_capacity
+
+    @property
+    def category(self) -> str:
+        return PowerCategories.NUCLEAR.value
+
+    @property
+    def capacity(self) -> Real:
+        return self.reactor_capacity * self.reactor_count
