@@ -16,9 +16,9 @@ Finally, a script is made available in `main.py` which loads in sample data and 
 
 ## Installation
 
-This code was written in Python 3.8, but should work with any Python 3.5 or greater.
+This code was written in Python 3.6, but should work with any Python 3.5 or greater.
 
-Ensure that `pandas` is installed by running the following command (within a `virtualenv`, if desired):
+Ensure that dependencies are installed by running the following command (within a `virtualenv`, if desired):
 
 ```
 pip install -r requirements.txt
@@ -39,3 +39,9 @@ From the same directory, the tests can be run with:
 ```
 python -m unittest discover -vs test
 ```
+
+## Example output
+|    | name       |   population |   demand |   available_capacity |   plant_count |   demand_per_capita |   pct_demand_satisfied |
+|---:|:-----------|-------------:|---------:|---------------------:|--------------:|--------------------:|-----------------------:|
+|  0 | Fooville   |       500000 |  1000000 |            1.077e+06 |             5 |                   2 |                  107.7 |
+|  1 | Barborough |      1000000 |  1000000 |            1.945e+06 |             7 |                   1 |                  194.5 |

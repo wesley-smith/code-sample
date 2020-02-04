@@ -50,7 +50,11 @@ def main(args):
 
     pd.set_option("display.max_columns", 999)
     pd.set_option("display.width", 999)
-    print(df)
+
+    if args.markdown_format:
+        print(df.to_markdown())
+    else:
+        print(df)
 
 
 if __name__ == "__main__":
@@ -61,6 +65,12 @@ if __name__ == "__main__":
         type=str,
         help="JSON file containing city data",
         default="cities.json",
+    )
+    parser.add_argument(
+        "-m",
+        "--markdown_format",
+        help="Default: output is plaintext",
+        action="store_true",
     )
 
     main(parser.parse_args())
